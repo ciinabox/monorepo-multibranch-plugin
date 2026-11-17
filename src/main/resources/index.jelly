@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+  An organization folder for one monorepo: a multibranch pipeline per nested Jenkinsfile, built only when the paths it watches change.
+</div>

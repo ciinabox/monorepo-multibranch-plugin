@@ -1,0 +1,11 @@
+<div>
+  One repository, with a multibranch pipeline for each <code>Jenkinsfile</code> in it. Every branch of
+  the repository is searched, so a <code>Jenkinsfile</code> added on a feature branch or in a pull
+  request creates its project there. Each project is named after the directory that holds its
+  <code>Jenkinsfile</code>, such as <code>services/api</code>; one at the top of the repository is
+  <code>(root)</code>.
+  <p>
+  Use it with the <em>Monorepo: a pipeline per nested Jenkinsfile</em> project factory, and the
+  <em>Monorepo: build when watched paths change</em> build strategy so that a project builds only
+  when something it watches changes.
+</div>

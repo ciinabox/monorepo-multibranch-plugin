@@ -1,0 +1,15 @@
+<div>
+  Builds a branch or pull request in a project only when a path the project watches changed. A
+  project watches everything under its own directory, plus what a <code>monorepo.yaml</code> beside
+  its <code>Jenkinsfile</code> adds:
+<pre>
+dependsOn: [libs/common]        # that project's directory and everything it watches, transitively
+watch: ["shared/schemas/**"]    # globs from the repository root
+</pre>
+  A branch is compared with the commit the project last built on it; a pull request with where it
+  left its target. Whenever that can't be worked out, it builds. Tags never build.
+  <p>
+  On GitHub, Bitbucket and GitLab each pull request also gets one overall status, which is pending
+  until every project it affects has built and succeeds at once when it affects none, so branch
+  protection can require it.
+</div>
